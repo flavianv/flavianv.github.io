@@ -29,13 +29,13 @@ buttons.forEach(button => button.addEventListener('click', () => {
 }));
 search.addEventListener('input', update);
 document.querySelector('#reset').addEventListener('click', () => {selected.clear(); search.value = ''; update(); search.focus();});
-document.querySelector('.play').addEventListener('click', () => {
+document.querySelectorAll('.video-shell[data-youtube]').forEach(shell => shell.querySelector('.play')?.addEventListener('click', () => {
   const frame = document.createElement('iframe');
-  frame.src = `https://www.youtube-nocookie.com/embed/tHLlJn1RkWU?autoplay=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
-  frame.title = 'Fine-tuning reasoning LLM agents with RLVR and GRPO';
+  frame.src = `https://www.youtube-nocookie.com/embed/${shell.dataset.youtube}?autoplay=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
+  frame.title = shell.dataset.title;
   frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
   frame.allowFullscreen = true;
   frame.referrerPolicy = 'strict-origin-when-cross-origin';
-  document.querySelector('.video-shell').replaceChildren(frame);
+  shell.replaceChildren(frame);
   frame.focus();
-});
+}));

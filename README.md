@@ -1,4 +1,4 @@
-# Flavian’s AI Tutorials
+# Flavian’s notes on AI
 
 A dependency-free personal AI notebook for GitHub Pages. Open `index.html` through any static HTTP server:
 

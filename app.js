@@ -10,7 +10,11 @@ function update() {
     const matches = (!selected.size || [...selected].some(topic => topics.includes(topic))) && post.textContent.toLowerCase().includes(query);
     post.hidden = !matches;
     if (matches) count++;
-    else { const frame = post.querySelector('iframe'); if (frame) frame.src = frame.src.replace('?autoplay=1', ''); }
+    else {
+      const frame = post.querySelector('iframe');
+      // Pause hidden media without navigating the iframe or losing playback position.
+      frame?.contentWindow?.postMessage(JSON.stringify({event: 'command', func: 'pauseVideo', args: []}), 'https://www.youtube-nocookie.com');
+    }
   }
   buttons.forEach(button => button.setAttribute('aria-pressed', button.dataset.topic === 'all' ? !selected.size : selected.has(button.dataset.topic)));
   document.querySelector('#results').textContent = `${count} ${count === 1 ? 'entry' : 'entries'} · ${selected.size > 1 ? 'Matching any selected topic' : 'Latest first'}`;
@@ -27,7 +31,7 @@ search.addEventListener('input', update);
 document.querySelector('#reset').addEventListener('click', () => {selected.clear(); search.value = ''; update(); search.focus();});
 document.querySelector('.play').addEventListener('click', () => {
   const frame = document.createElement('iframe');
-  frame.src = 'https://www.youtube-nocookie.com/embed/ebKDoRdeUVg?autoplay=1';
+  frame.src = `https://www.youtube-nocookie.com/embed/ebKDoRdeUVg?autoplay=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
   frame.title = 'RLVR with GRPO fine-tuning: A short tutorial';
   frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
   frame.allowFullscreen = true;

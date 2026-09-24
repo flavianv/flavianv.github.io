@@ -31,8 +31,8 @@ search.addEventListener('input', update);
 document.querySelector('#reset').addEventListener('click', () => {selected.clear(); search.value = ''; update(); search.focus();});
 document.querySelector('.play').addEventListener('click', () => {
   const frame = document.createElement('iframe');
-  frame.src = `https://www.youtube-nocookie.com/embed/ebKDoRdeUVg?autoplay=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
-  frame.title = 'RLVR with GRPO fine-tuning: A short tutorial';
+  frame.src = `https://www.youtube-nocookie.com/embed/tHLlJn1RkWU?autoplay=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
+  frame.title = 'Fine-tuning reasoning LLM agents with RLVR and GRPO';
   frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
   frame.allowFullscreen = true;
   frame.referrerPolicy = 'strict-origin-when-cross-origin';

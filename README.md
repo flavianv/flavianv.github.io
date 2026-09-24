@@ -6,9 +6,9 @@ A dependency-free personal AI notebook for GitHub Pages. Open `index.html` throu
 python3 -m http.server 4173
 ```
 
-The homepage supports text search and multiple topic selections (matching any selected topic). The initial entry embeds the published YouTube video https://www.youtube.com/watch?v=ebKDoRdeUVg, with a local poster and a written companion referencing primary research papers. Publication metadata: September 24, 2026; uploaded video duration: 7:53, verified in the user's browser.
+The homepage supports text search and multiple topic selections (matching any selected topic). The initial entry embeds the published YouTube video https://www.youtube.com/watch?v=tHLlJn1RkWU, with a local poster and a written companion referencing primary research papers. Publication metadata: September 24, 2026; uploaded video duration: 6:53, verified against YouTube’s public player metadata (413 seconds).
 
-The written companion is adapted from `2026_Q3_AITutorials/rlvr-grpo` narration. The poster is extracted from the local film. That project was not modified. Numerical examples are illustrative. The local draft video is shorter than the uploaded version and is not included in this site.
+The written companion is adapted from `2026_Q3_AITutorials/rlvr-grpo` narration. The poster is extracted from the local film. That project was not modified. Numerical examples are illustrative. The video is hosted on YouTube and is not included in this site.
 
 To add an entry, create an article under `articles/`, add a `.post` in `index.html` with pipe-separated `data-topics`, and place it in publication order (newest first). Update the notebook count. Use relative links and local assets.
 

@@ -12,6 +12,6 @@ The written companion is adapted from `2026_Q3_AITutorials/rlvr-grpo` narration.
 
 To add an entry, create an article under `articles/`, add a `.post` in `index.html` with pipe-separated `data-topics`, and place it in publication order (newest first). Update the notebook count. Use relative links and local assets.
 
-No build step, external fonts, analytics, or runtime dependencies. To publish when ready, configure GitHub Pages to serve the repository root. This implementation does not change repository settings or publish remotely.
+No build step, external fonts, or runtime dependencies. Privacy-friendly, cookie-free Cloudflare Web Analytics is included on every page (the beacon snippet before </body>; dashboard: Cloudflare → Analytics & Logs → Web Analytics). To publish when ready, configure GitHub Pages to serve the repository root. This implementation does not change repository settings or publish remotely.
 
 Favicon: the actual purple galaxy avatar from [Flavian’s Gradient Notes](https://www.youtube.com/channel/UCimRvh1gOtqmKlIVCfkYOYg), retrieved September 24, 2026. Resized without redesign into 16/32px PNG, multi-size ICO, and 180px Apple touch icon.
